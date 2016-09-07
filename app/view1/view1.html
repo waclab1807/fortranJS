@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="well text-center">
+        <div>
+            <div>
+                <button ng-click="insertUnicode('\u221A')" id="sqrt"></button>
+                <button ng-click="insertUnicode('^')" id="pow"></button>
+                <button ng-click="insertUnicode('\u03C0')" id="pi"></button>
+            </div><br>
+            <input type="text" id="val1" ng-blur="setId('val1')" ng-model-options="{ debounce:10 }" ng-model="val1">
+            <input type="text" id="op" ng-blur="setId('op')" ng-model-options="{ debounce:10 }" ng-model="operator">
+            <input type="text" id="val2" ng-blur="setId('val2')" ng-model-options="{ debounce:10 }" ng-model="val2">
+            <button ng-click="count()">policz</button><br><br>
+            <div>Wynik: {{result}}</div>
+        </div>
+    </div>
+</div>
