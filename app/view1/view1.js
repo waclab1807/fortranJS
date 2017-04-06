@@ -15,7 +15,7 @@ app.controller('View1Ctrl', ['$scope', 'mainSwitch', function($scope, mainSwitch
   $('#pi').text('( ) '+'π');
   $('#pow').text('( ) ^ ( )');
 
-  $scope.val1 = '3';
+  $scope.val1 = '(3)+3-2*8';
   $scope.operator = '*';
   $scope.val2 = '5/6';
 
@@ -26,6 +26,11 @@ app.controller('View1Ctrl', ['$scope', 'mainSwitch', function($scope, mainSwitch
 
   $scope.count = function() {
     $scope.result = mainSwitch.count($scope.val1, $scope.val2, $scope.operator);
+  };
+
+  $scope.test = function () {
+    var value = ($scope.val1);
+    console.log(mainSwitch.jakie(value));
   };
 
   /** insert sqrt or pow */

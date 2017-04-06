@@ -433,18 +433,20 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
                 console.log('pi z pi');
 
+                // todo uwzględnić 'π^2' we wszystkich
+
                 switch (operator) {
                     case '+':
-                        result = val1 +  ' + ' +  val2;
+                        result = dodajPi(val1, val2);
                         break;
                     case '-':
-                        result = val1 +  ' - ' +  val2;
+                        result = odejmijPi(val1, val2);
                         break;
                     case '*':
-                        result = val1 +  ' * ' +  val2;
+                        result = pomnozPi(val1, val2);
                         break;
                     case '/':
-                        result = val1 +  ' / ' +  val2;
+                        result = podzielPi(val1, val2);
                         break;
                 }
 
@@ -631,6 +633,138 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
         return result.toString();
     };
 
+    function usunZawartoscNawiasow (string) {
+        for (var i=0; i< string.length; i++) {
+            if (value.charAt(i) == '(') {
+                flagaO = i;
+                counter++;
+            }
+            if (value.charAt(i) == ')') {
+
+            }
+        }
+    }
+
+    function removeFromBrackets (arr, a, b) {
+        console.log(a);
+        console.log(b);
+        for (var x=a; x<=b; x++) {
+            arr[x] = "$";
+        }
+        return arr;
+    }
+
+    function jakieToWyrazenie (value) {
+        console.log('value1', value);
+
+        // value has brackets
+        if (value.includes('(') && value.includes(')')) {
+            while (value.includes('(') || value.includes(')')) {
+                // delete values from the inside of brackets, e.g. '((x*y)+z)' -> '(()+z)' -> '(z)' -> ''
+                //value = value.replace(/^(?:\[[^\]]*\]|\([^()]*\))\s*|\s*(?:\[[^\]]*\]|\([^()]*\))/g, "");
+
+                var flaga = 0, position = 0;
+                value = value.replace(/\s/g, "");
+                var value1 = value;
+                value = value.split('');
+                value = Object.keys(value).map(function(e) {
+                    return value[e];
+                });
+
+                for (x in value) {
+                    console.log('sd',value[x]);
+                    if (value[x] == '(') {
+                        flaga++;
+                        position = x;
+                    }
+                    if (value[x] == ')') {
+                        if(flaga >= 1) {
+                            flaga--;
+                            console.log('adsas');
+                            value = removeFromBrackets(value, position, x);
+                        }
+                    }
+                }
+                console.log(value);
+
+                //value = value1;
+                // check if value starts with '(' and ends with ')' and that's the only brackets in value, e.g. '(x*y)' -> returns '*'
+                if (value.startsWith('(') && (value.match(/\(/g) || []).length == 1 && value.endsWith(')') && (value.match(/\)/g) || []).length == 1) {
+                    value = value.substring(1, value.length-1);
+                }
+            }
+            //return jakieToWyrazenie(value);
+        } else {
+            // value has no brackets
+            console.log('value', value);
+            if (value.includes('+') || value.includes('-')) {
+                //delete minus from beginning of string
+                if (value.startsWith('-')) {
+                    value = value.substr(1, value.length);
+                }
+                if (value.includes('+') && !value.includes('-')) {
+                    return '+';
+                }
+                if (!value.includes('+') && value.includes('-')) {
+                    return '-';
+                }
+                var add = value.indexOf('+');
+                var min = value.indexOf('-');
+                //get first occurrence
+                if (add < min) {
+                    return '+';
+                } else {
+                    return '-';
+                }
+            } else if
+            (value.includes('*') || value.includes('/')) {
+                if (value.includes('*') && !value.includes('/')) {
+                    return '*';
+                }
+                if (!value.includes('*') && value.includes('/')) {
+                    return '/';
+                }
+                var mal = value.indexOf('*');
+                var dev = value.indexOf('/');
+                //get first occurrence
+                if (mal < dev) {
+                    return '*';
+                } else {
+                    return '/';
+                }
+            } else if (value.includes('\u221a')) {
+                return '\u221a';
+            } else if (value.includes('^')) {
+                return '^';
+            } else if (value.includes('^')) {
+                return '^';
+            } else if (value.includes('π')) {
+                return 'π';
+            }
+        }
+
+    }
+
+    /** get operator type */
+    function operatorOperacji(string) {
+        if (string.includes('+')) {
+            return '+';
+        } else if (string.includes('-')) {
+            return '-';
+        } else if (string.includes('/')) {
+            return '/';
+        } else if (string.includes('*')) {
+            return '*';
+        }
+    }
+
+    function uwymiernijUlamek(string) {
+        var ul = ulamek.Ulamek(string);
+        var licznik = count(ul.before(), ul.after, '*');
+        var mianownik = count(ul.before(), ul.before, '*');
+
+        return count(licznik, mianownik, '/');
+    }
 
     function dodajUlamki (val1, val2) {
 
@@ -737,7 +871,60 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
         return count(licznik, mianownik, '/');
     }
 
+    function dodajPi (val1, val2) {
+        var pi1 = pi.Pi(val1);
+        var pi2 = pi.Pi(val2);
+
+        var result = count(pi1.before, pi2.before, '+');
+
+        if (result == '0'){
+            return '0';
+        } else {
+            return result + 'π';
+        }
+    }
+
+    function odejmijPi (val1, val2) {
+        var pi1 = pi.Pi(val1);
+        var pi2 = pi.Pi(val2);
+
+        var result = count(pi1.before, pi2.before, '-');
+
+        if (result == '0'){
+            return '0';
+        } else {
+            return result + 'π';
+        }
+    }
+
+    function pomnozPi (val1, val2) {
+        var pi1 = pi.Pi(val1);
+        var pi2 = pi.Pi(val2);
+
+        var result = count(pi1.before, pi2.before, '*');
+
+        if (result == '0'){
+            return '0';
+        } else {
+            return '(' + result + ')π^2';
+        }
+    }
+
+    function podzielPi (val1, val2) {
+        var pi1 = pi.Pi(val1);
+        var pi2 = pi.Pi(val2);
+
+        var result = count(pi1.before, pi2.before, '/');
+
+        if (result == '0'){
+            return '0';
+        } else {
+            return result;
+        }
+    }
+
     return {
+        jakie: jakieToWyrazenie,
         count: count
     }
 }]);
