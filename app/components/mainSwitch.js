@@ -646,54 +646,25 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
     }
 
     function removeFromBrackets (arr, a, b) {
-        console.log(a);
-        console.log(b);
-        for (var x=a; x<=b; x++) {
-            arr[x] = "$";
+        for (var y=a; y<=b; y++) {
+            arr[y] = "$";
         }
         return arr;
     }
 
     function jakieToWyrazenie (value) {
-        console.log('value1', value);
+        value = value.replace(/\s/g, ''); // remove whitespaces
+
+        console.log('value', value);
 
         // value has brackets
         if (value.includes('(') && value.includes(')')) {
-            while (value.includes('(') || value.includes(')')) {
-                // delete values from the inside of brackets, e.g. '((x*y)+z)' -> '(()+z)' -> '(z)' -> ''
-                //value = value.replace(/^(?:\[[^\]]*\]|\([^()]*\))\s*|\s*(?:\[[^\]]*\]|\([^()]*\))/g, "");
-
-                var flaga = 0, position = 0;
-                value = value.replace(/\s/g, "");
-                var value1 = value;
-                value = value.split('');
-                value = Object.keys(value).map(function(e) {
-                    return value[e];
-                });
-
-                for (x in value) {
-                    console.log('sd',value[x]);
-                    if (value[x] == '(') {
-                        flaga++;
-                        position = x;
-                    }
-                    if (value[x] == ')') {
-                        if(flaga >= 1) {
-                            flaga--;
-                            console.log('adsas');
-                            value = removeFromBrackets(value, position, x);
-                        }
-                    }
-                }
-                console.log(value);
-
-                //value = value1;
-                // check if value starts with '(' and ends with ')' and that's the only brackets in value, e.g. '(x*y)' -> returns '*'
-                if (value.startsWith('(') && (value.match(/\(/g) || []).length == 1 && value.endsWith(')') && (value.match(/\)/g) || []).length == 1) {
-                    value = value.substring(1, value.length-1);
-                }
+            if (value.replace(/\(([^()]*)\)/g, "") == '') {
+                value = value.substring(1, value.length-1);
+            } else {
+                value = value.replace(/\(([^()]*)\)/g, "$");
             }
-            //return jakieToWyrazenie(value);
+            return jakieToWyrazenie(value);
         } else {
             // value has no brackets
             console.log('value', value);
@@ -708,10 +679,11 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                 if (!value.includes('+') && value.includes('-')) {
                     return '-';
                 }
-                var add = value.indexOf('+');
-                var min = value.indexOf('-');
+
+                var add = value.lastIndexOf('+');
+                var min = value.lastIndexOf('-');
                 //get first occurrence
-                if (add < min) {
+                if (add > min) {
                     return '+';
                 } else {
                     return '-';
@@ -724,10 +696,11 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                 if (!value.includes('*') && value.includes('/')) {
                     return '/';
                 }
-                var mal = value.indexOf('*');
-                var dev = value.indexOf('/');
+                // todo nie robić anagramu tylko złapać ostatnie wystąpienie znaku tak jak poniżej, powinno być już ok, do zbadania i trzeba przetestować potęgi, pierwiastki i pi
+                var mal = value.lastIndexOf('*');
+                var dev = value.lastIndexOf('/');
                 //get first occurrence
-                if (mal < dev) {
+                if (mal > dev) {
                     return '*';
                 } else {
                     return '/';
