@@ -722,7 +722,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
     function jakieToWyrazenie(value) {
         value = value.replace(/\s/g, ''); // remove whitespaces
 
-        // console.log('value', value);
+        console.log('value', value);
 
         // value has brackets
         if (value.includes('(') && value.includes(')')) {
@@ -736,13 +736,14 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
         //value has negative numbers
         else if (value.startsWith('-') || value.includes('+-') || value.includes('--') || value.includes('/-') || value.includes('*-')) {
+            console.log("ujemne wartosci");
+
             if(value.replace(/^-|\+-|--|\*-|\/-/g, "") !== '') {
-                // console.log(value.match(/^-|\+-|--|\*-|\/-/g).length);
-                value = value.replace(/(^-|\+-|--|\*-|\/-)/g, "");
-                console.log(value.replace(/^-|\+-|--|\*-|\/-/g, ""));
-                // console.log(value.replace(/(^-|\+-|--|\*-|\/-)/g, ""));
-                // console.log('som')
-                console.log('value', value);
+                value = value.replace(/^-/g, "");
+                value = value.replace(/(-(-))/g, '-');
+                value = value.replace(/(\+(-))/g, '+');
+                value = value.replace(/(\/(-))/g, '/');
+                value = value.replace(/(\*(-))/g, '*');
                 return jakieToWyrazenie(value);
             }
         }
