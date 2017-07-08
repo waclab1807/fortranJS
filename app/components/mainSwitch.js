@@ -2,8 +2,8 @@
  * Created by waclabdev on 28.08.16.
  */
 
-app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', function(ulamek, potega, pierwiastek, pi, helpers) {
-    var count = function(val1, val2, operator) {
+app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', function (ulamek, potega, pierwiastek, pi, helpers) {
+    var count = function (val1, val2, operator) {
 
         var result = '';
 
@@ -37,16 +37,16 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
                 switch (operator) {
                     case '+':
-                        result = val1 +  ' + ' +  val2;
+                        result = val1 + ' + ' + val2;
                         break;
                     case '-':
-                        result = val1 +  ' - ' +  val2;
+                        result = val1 + ' - ' + val2;
                         break;
                     case '*':
-                        result = val1 +  ' * ' +  val2;
+                        result = val1 + ' * ' + val2;
                         break;
                     case '/':
-                        result = val1 +  ' / ' +  val2;
+                        result = val1 + ' / ' + val2;
                         break;
                 }
 
@@ -56,16 +56,16 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
                 switch (operator) {
                     case '+':
-                        result = val1 +  ' + ' +  val2;
+                        result = val1 + ' + ' + val2;
                         break;
                     case '-':
-                        result = val1 +  ' - ' +  val2;
+                        result = val1 + ' - ' + val2;
                         break;
                     case '*':
-                        result = val1 +  ' * ' +  val2;
+                        result = val1 + ' * ' + val2;
                         break;
                     case '/':
-                        result = val1 +  ' / ' +  val2;
+                        result = val1 + ' / ' + val2;
                         break;
                 }
 
@@ -75,16 +75,16 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
                 switch (operator) {
                     case '+':
-                        result = val1 +  ' + ' +  val2;
+                        result = val1 + ' + ' + val2;
                         break;
                     case '-':
-                        result = val1 +  ' - ' +  val2;
+                        result = val1 + ' - ' + val2;
                         break;
                     case '*':
-                        result = val1 +  ' * ' +  val2;
+                        result = val1 + ' * ' + val2;
                         break;
                     case '/':
-                        result = val1 +  ' / ' +  val2;
+                        result = val1 + ' / ' + val2;
                         break;
                 }
 
@@ -113,22 +113,24 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
                 switch (operator) {
                     case '+':
-                        result = val1 +  ' + ' +  val2;
+                        result = val1 + ' + ' + val2;
                         break;
                     case '-':
-                        result = val1 +  ' - ' +  val2;
+                        result = val1 + ' - ' + val2;
                         break;
                     case '*':
-                        result = val1 +  ' * ' +  val2;
+                        result = val1 + ' * ' + val2;
                         break;
                     case '/':
-                        result = val1 +  ' / ' +  val2;
+                        result = val1 + ' / ' + val2;
                         break;
                 }
 
             }
 
-        } else if (val1.includes('\u221a')) {
+        }
+
+        else if (val1.includes('\u221a')) {
 
             //var sqrt = pierwiastek.Pierwiastek(val1);
             //value1 = parseFloat(count(sqrt.before, sqrt.after,'/'));
@@ -139,16 +141,16 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
                 switch (operator) {
                     case '+':
-                        result = val1 +  ' + ' +  val2;
+                        result = val1 + ' + ' + val2;
                         break;
                     case '-':
-                        result = val1 +  ' - ' +  val2;
+                        result = val1 + ' - ' + val2;
                         break;
                     case '*':
-                        result = val1 +  ' * ' +  val2;
+                        result = val1 + ' * ' + val2;
                         break;
                     case '/':
-                        result = val1 +  ' / ' +  val2;
+                        result = val1 + ' / ' + val2;
                         break;
                 }
 
@@ -158,16 +160,16 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
                 switch (operator) {
                     case '+':
-                        result = val1 +  ' + ' +  val2;
+                        result = val1 + ' + ' + val2;
                         break;
                     case '-':
-                        result = val1 +  ' - ' +  val2;
+                        result = val1 + ' - ' + val2;
                         break;
                     case '*':
-                        result = val1 +  ' * ' +  val2;
+                        result = val1 + ' * ' + val2;
                         break;
                     case '/':
-                        result = val1 +  ' / ' +  val2;
+                        result = val1 + ' / ' + val2;
                         break;
                 }
 
@@ -177,16 +179,16 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
                 switch (operator) {
                     case '+':
-                        result = val1 +  ' + ' +  val2;
+                        result = val1 + ' + ' + val2;
                         break;
                     case '-':
-                        result = val1 +  ' - ' +  val2;
+                        result = val1 + ' - ' + val2;
                         break;
                     case '*':
-                        result = val1 +  ' * ' +  val2;
+                        result = val1 + ' * ' + val2;
                         break;
                     case '/':
-                        result = val1 +  ' / ' +  val2;
+                        result = val1 + ' / ' + val2;
                         break;
                 }
 
@@ -196,16 +198,16 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
                 switch (operator) {
                     case '+':
-                        result = val1 +  ' + ' +  val2;
+                        result = val1 + ' + ' + val2;
                         break;
                     case '-':
-                        result = val1 +  ' - ' +  val2;
+                        result = val1 + ' - ' + val2;
                         break;
                     case '*':
-                        result = val1 +  ' * ' +  val2;
+                        result = val1 + ' * ' + val2;
                         break;
                     case '/':
-                        result = val1 +  ' / ' +  val2;
+                        result = val1 + ' / ' + val2;
                         break;
                 }
 
@@ -234,22 +236,24 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
                 switch (operator) {
                     case '+':
-                        result = val1 +  ' + ' +  val2;
+                        result = val1 + ' + ' + val2;
                         break;
                     case '-':
-                        result = val1 +  ' - ' +  val2;
+                        result = val1 + ' - ' + val2;
                         break;
                     case '*':
-                        result = val1 +  ' * ' +  val2;
+                        result = val1 + ' * ' + val2;
                         break;
                     case '/':
-                        result = val1 +  ' / ' +  val2;
+                        result = val1 + ' / ' + val2;
                         break;
                 }
 
             }
 
-        } else if (val1.includes('^')) {
+        }
+
+        else if (val1.includes('^')) {
 
             //var pow = potega.Potega(val1);
             //value1 = parseFloat(count(pow.before, pow.after,'*'));
@@ -260,16 +264,16 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
                 switch (operator) {
                     case '+':
-                        result = val1 +  ' + ' +  val2;
+                        result = val1 + ' + ' + val2;
                         break;
                     case '-':
-                        result = val1 +  ' - ' +  val2;
+                        result = val1 + ' - ' + val2;
                         break;
                     case '*':
-                        result = val1 +  ' * ' +  val2;
+                        result = val1 + ' * ' + val2;
                         break;
                     case '/':
-                        result = val1 +  ' / ' +  val2;
+                        result = val1 + ' / ' + val2;
                         break;
                 }
 
@@ -279,16 +283,16 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
                 switch (operator) {
                     case '+':
-                        result = val1 +  ' + ' +  val2;
+                        result = val1 + ' + ' + val2;
                         break;
                     case '-':
-                        result = val1 +  ' - ' +  val2;
+                        result = val1 + ' - ' + val2;
                         break;
                     case '*':
-                        result = val1 +  ' * ' +  val2;
+                        result = val1 + ' * ' + val2;
                         break;
                     case '/':
-                        result = val1 +  ' / ' +  val2;
+                        result = val1 + ' / ' + val2;
                         break;
                 }
 
@@ -298,16 +302,16 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
                 switch (operator) {
                     case '+':
-                        result = val1 +  ' + ' +  val2;
+                        result = val1 + ' + ' + val2;
                         break;
                     case '-':
-                        result = val1 +  ' - ' +  val2;
+                        result = val1 + ' - ' + val2;
                         break;
                     case '*':
-                        result = val1 +  ' * ' +  val2;
+                        result = val1 + ' * ' + val2;
                         break;
                     case '/':
-                        result = val1 +  ' / ' +  val2;
+                        result = val1 + ' / ' + val2;
                         break;
                 }
 
@@ -317,16 +321,16 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
                 switch (operator) {
                     case '+':
-                        result = val1 +  ' + ' +  val2;
+                        result = val1 + ' + ' + val2;
                         break;
                     case '-':
-                        result = val1 +  ' - ' +  val2;
+                        result = val1 + ' - ' + val2;
                         break;
                     case '*':
-                        result = val1 +  ' * ' +  val2;
+                        result = val1 + ' * ' + val2;
                         break;
                     case '/':
-                        result = val1 +  ' / ' +  val2;
+                        result = val1 + ' / ' + val2;
                         break;
                 }
 
@@ -355,22 +359,24 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
                 switch (operator) {
                     case '+':
-                        result = val1 +  ' + ' +  val2;
+                        result = val1 + ' + ' + val2;
                         break;
                     case '-':
-                        result = val1 +  ' - ' +  val2;
+                        result = val1 + ' - ' + val2;
                         break;
                     case '*':
-                        result = val1 +  ' * ' +  val2;
+                        result = val1 + ' * ' + val2;
                         break;
                     case '/':
-                        result = val1 +  ' / ' +  val2;
+                        result = val1 + ' / ' + val2;
                         break;
                 }
 
             }
 
-        } else if (val1.includes('π')) {
+        }
+
+        else if (val1.includes('π')) {
 
             if (val2.includes('/')) {
 
@@ -378,16 +384,16 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
                 switch (operator) {
                     case '+':
-                        result = val1 +  ' + ' +  val2;
+                        result = val1 + ' + ' + val2;
                         break;
                     case '-':
-                        result = val1 +  ' - ' +  val2;
+                        result = val1 + ' - ' + val2;
                         break;
                     case '*':
-                        result = val1 +  ' * ' +  val2;
+                        result = val1 + ' * ' + val2;
                         break;
                     case '/':
-                        result = val1 +  ' / ' +  val2;
+                        result = val1 + ' / ' + val2;
                         break;
                 }
 
@@ -397,16 +403,16 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
                 switch (operator) {
                     case '+':
-                        result = val1 +  ' + ' +  val2;
+                        result = val1 + ' + ' + val2;
                         break;
                     case '-':
-                        result = val1 +  ' - ' +  val2;
+                        result = val1 + ' - ' + val2;
                         break;
                     case '*':
-                        result = val1 +  ' * ' +  val2;
+                        result = val1 + ' * ' + val2;
                         break;
                     case '/':
-                        result = val1 +  ' / ' +  val2;
+                        result = val1 + ' / ' + val2;
                         break;
                 }
 
@@ -416,16 +422,16 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
                 switch (operator) {
                     case '+':
-                        result = val1 +  ' + ' +  val2;
+                        result = val1 + ' + ' + val2;
                         break;
                     case '-':
-                        result = val1 +  ' - ' +  val2;
+                        result = val1 + ' - ' + val2;
                         break;
                     case '*':
-                        result = val1 +  ' * ' +  val2;
+                        result = val1 + ' * ' + val2;
                         break;
                     case '/':
-                        result = val1 +  ' / ' +  val2;
+                        result = val1 + ' / ' + val2;
                         break;
                 }
 
@@ -475,10 +481,10 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
                 switch (operator) {
                     case '+':
-                        result = val1 +  ' + ' +  val2;
+                        result = val1 + ' + ' + val2;
                         break;
                     case '-':
-                        result = val1 +  ' - ' +  val2;
+                        result = val1 + ' - ' + val2;
                         break;
                     case '*':
                         result = pomnozLiczbeiPi(val2, val1);
@@ -490,7 +496,9 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
             }
 
-        } else if (val1.includes('.')) {
+        }
+
+        else if (val1.includes('.')) {
 
             if (val2.includes('.')) {
 
@@ -506,7 +514,9 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
             }
 
-        } else {
+        }
+
+        else {
 
             if (val2.includes('/')) {
 
@@ -528,54 +538,60 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
                 }
 
-            } else if (val2.includes('\u221a')) {
+            }
+
+            else if (val2.includes('\u221a')) {
 
                 console.log('liczba z pierwiastkiem');
 
                 switch (operator) {
                     case '+':
-                        result = val1 +  ' + ' +  val2;
+                        result = val1 + ' + ' + val2;
                         break;
                     case '-':
-                        result = val1 +  ' - ' +  val2;
+                        result = val1 + ' - ' + val2;
                         break;
                     case '*':
-                        result = val1 +  ' * ' +  val2;
+                        result = val1 + ' * ' + val2;
                         break;
                     case '/':
-                        result = val1 +  ' / ' +  val2;
+                        result = val1 + ' / ' + val2;
                         break;
                 }
 
-            } else if (val2.includes('^')) {
+            }
+
+            else if (val2.includes('^')) {
 
                 console.log('liczba z potęgą');
 
                 switch (operator) {
                     case '+':
-                        result = val1 +  ' + ' +  val2;
+                        result = val1 + ' + ' + val2;
                         break;
                     case '-':
-                        result = val1 +  ' - ' +  val2;
+                        result = val1 + ' - ' + val2;
                         break;
                     case '*':
-                        result = val1 +  ' * ' +  val2;
+                        result = val1 + ' * ' + val2;
                         break;
                     case '/':
-                        result = val1 +  ' / ' +  val2;
+                        result = val1 + ' / ' + val2;
                         break;
                 }
 
-            } else if (val2.includes('π')) {
+            }
+
+            else if (val2.includes('π')) {
 
                 console.log('liczba z pi');
 
                 switch (operator) {
                     case '+':
-                        result = val1 +  ' + ' +  val2;
+                        result = val1 + ' + ' + val2;
                         break;
                     case '-':
-                        result = val1 +  ' - ' +  val2;
+                        result = val1 + ' - ' + val2;
                         break;
                     case '*':
                         result = pomnozLiczbeiPi(val1, val2);
@@ -585,9 +601,11 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
                 }
 
-            } else if (val2.includes('.')) {
+            }
 
-                console.log('liczba z liczbą dziesiętną');
+            else if (val2.includes('.')) {
+
+                console.log('liczba z liczba dziesietna');
 
                 switch (operator) {
                     case '+':
@@ -604,25 +622,71 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
                 }
 
-            } else {
+            }
 
-                console.log('liczba z liczbą');
+            else {
 
-                var value1 = parseFloat(val1);
-                var value2 = parseFloat(val2);
+                var czyDzialanie = true;
+                if (isNaN(parseFloat(val1)) || isNaN(parseFloat(val2))) {
+
+                    console.log("pojedyncza liczba")
+                    czyDzialanie =  false;
+                    var onlyValue;
+
+                    if (isNaN(parseFloat(val1))) {
+                        onlyValue = parseFloat(val2);
+                    }
+
+                    else if (isNaN(parseFloat(val2))) {
+                        onlyValue = parseFloat(val1);
+                    }
+
+                    else {
+                        onlyValue = 0;
+                    }
+                }
+                else {
+                    console.log("liczba z liczba")
+                    var value1 = parseFloat(val1);
+                    var value2 = parseFloat(val2);
+                }
 
                 switch (operator) {
+
                     case '+':
-                        result = value1 +  value2;
+                        if(czyDzialanie) {
+                            result = value1 + value2;
+                        }
+                        else {
+                            result = onlyValue;
+                        }
                         break;
+
                     case '-':
-                        result = value1 - value2;
+                        if(czyDzialanie) {
+                            result = value1 - value2;
+                        }
+                        else {
+                            result = onlyValue;
+                        }
                         break;
+
                     case '*':
-                        result = value1 * value2;
+                        if(czyDzialanie) {
+                            result = value1 * value2;
+                        }
+                        else {
+                            result = onlyValue;
+                        }
                         break;
+
                     case '/':
-                        result = skrocUlamek(value1 + '/' + value2);
+                        if(czyDzialanie) {
+                            result = skrocUlamek(value1 + '/' + value2);
+                        }
+                        else {
+                            result = onlyValue;
+                        }
                         break;
                 }
 
@@ -633,8 +697,8 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
         return result.toString();
     };
 
-    function usunZawartoscNawiasow (string) {
-        for (var i=0; i< string.length; i++) {
+    function usunZawartoscNawiasow(string) {
+        for (var i = 0; i < string.length; i++) {
             if (value.charAt(i) == '(') {
                 flagaO = i;
                 counter++;
@@ -645,14 +709,14 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
         }
     }
 
-    function removeFromBrackets (arr, a, b) {
-        for (var y=a; y<=b; y++) {
+    function removeFromBrackets(arr, a, b) {
+        for (var y = a; y <= b; y++) {
             arr[y] = "$";
         }
         return arr;
     }
 
-    function jakieToWyrazenie (value) {
+    function jakieToWyrazenie(value) {
         value = value.replace(/\s/g, ''); // remove whitespaces
 
         console.log('value', value);
@@ -660,12 +724,14 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
         // value has brackets
         if (value.includes('(') && value.includes(')')) {
             if (value.replace(/\(([^()]*)\)/g, "") == '') {
-                value = value.substring(1, value.length-1);
+                value = value.substring(1, value.length - 1);
             } else {
                 value = value.replace(/\(([^()]*)\)/g, "$");
             }
             return jakieToWyrazenie(value);
-        } else {
+        }
+
+        else {
             // value has no brackets
             console.log('value', value);
             if (value.includes('+') || value.includes('-')) {
@@ -688,8 +754,9 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                 } else {
                     return '-';
                 }
-            } else if
-            (value.includes('*') || value.includes('/')) {
+            }
+
+            else if (value.includes('*') || value.includes('/')) {
                 if (value.includes('*') && !value.includes('/')) {
                     return '*';
                 }
@@ -705,14 +772,26 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                 } else {
                     return '/';
                 }
-            } else if (value.includes('\u221a')) {
+            }
+
+            else if (value.includes('\u221a')) {
                 return '\u221a';
-            } else if (value.includes('^')) {
+            }
+
+            else if (value.includes('^')) {
                 return '^';
-            } else if (value.includes('^')) {
+            }
+
+            else if (value.includes('^')) {
                 return '^';
-            } else if (value.includes('π')) {
+            }
+
+            else if (value.includes('π')) {
                 return 'π';
+            }
+
+            else {
+                return value;
             }
         }
 
@@ -739,14 +818,14 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
         return count(licznik, mianownik, '/');
     }
 
-    function dodajUlamki (val1, val2) {
+    function dodajUlamki(val1, val2) {
 
         var nominator;
         var denominator;
         var ulamek1 = ulamek.Ulamek(val1);
         var ulamek2 = ulamek.Ulamek(val2);
 
-        if(ulamek1.after != ulamek2.after) {                // denominators aren't equal
+        if (ulamek1.after != ulamek2.after) {                // denominators aren't equal
             var nominator1 = count(ulamek1.before, ulamek2.after, '*');
             denominator = count(ulamek1.after, ulamek2.after, '*');
             var nominator2 = count(ulamek2.before, ulamek1.after, '*');
@@ -759,7 +838,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
         return count(nominator, denominator, '/');
     }
 
-    function skrocUlamek (string) {
+    function skrocUlamek(string) {
 
         var ul = ulamek.Ulamek(string);
         if (ul.after == '0' || ul.after == '0.0' || ul.after == '-0' || ul.after == '-0.0') {
@@ -780,7 +859,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
         }
     }
 
-    function pomnozLiczbeiPi (liczba, val2) {
+    function pomnozLiczbeiPi(liczba, val2) {
         var liczbaPi = pi.Pi(val2);
         var result = count(liczba, liczbaPi.before, '*');
         if (result != 0) {
@@ -790,7 +869,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
         }
     }
 
-    function podzielLiczbeiPi (liczba, val2) {
+    function podzielLiczbeiPi(liczba, val2) {
         var liczbaPi = pi.Pi(val2);
         var tmp = count(liczba, liczbaPi.before, '/');
         if (tmp.includes('/')) {
@@ -801,7 +880,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
         }
     }
 
-    function odejmijUlamki (val1, val2) {
+    function odejmijUlamki(val1, val2) {
         var ul1 = ulamek.Ulamek(val1);
         var ul2 = ulamek.Ulamek(val2);
         var licznik, mianownik, licznikx, mianownikx, liczniky;
@@ -822,7 +901,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
         return skrocUlamek(licznik + '/' + mianownik);
     }
 
-    function pomnozUlamki (val1, val2) {
+    function pomnozUlamki(val1, val2) {
         var ul1 = ulamek.Ulamek(val1);
         var ul2 = ulamek.Ulamek(val2);
         var licznik, mianownik;
@@ -833,7 +912,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
         return count(licznik, mianownik, '/');
     }
 
-    function podzielUlamki (val1, val2) {
+    function podzielUlamki(val1, val2) {
         var ul1 = ulamek.Ulamek(val1);
         var ul2 = ulamek.Ulamek(val2);
         var licznik, mianownik;
@@ -844,52 +923,52 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
         return count(licznik, mianownik, '/');
     }
 
-    function dodajPi (val1, val2) {
+    function dodajPi(val1, val2) {
         var pi1 = pi.Pi(val1);
         var pi2 = pi.Pi(val2);
 
         var result = count(pi1.before, pi2.before, '+');
 
-        if (result == '0'){
+        if (result == '0') {
             return '0';
         } else {
             return result + 'π';
         }
     }
 
-    function odejmijPi (val1, val2) {
+    function odejmijPi(val1, val2) {
         var pi1 = pi.Pi(val1);
         var pi2 = pi.Pi(val2);
 
         var result = count(pi1.before, pi2.before, '-');
 
-        if (result == '0'){
+        if (result == '0') {
             return '0';
         } else {
             return result + 'π';
         }
     }
 
-    function pomnozPi (val1, val2) {
+    function pomnozPi(val1, val2) {
         var pi1 = pi.Pi(val1);
         var pi2 = pi.Pi(val2);
 
         var result = count(pi1.before, pi2.before, '*');
 
-        if (result == '0'){
+        if (result == '0') {
             return '0';
         } else {
             return '(' + result + ')π^2';
         }
     }
 
-    function podzielPi (val1, val2) {
+    function podzielPi(val1, val2) {
         var pi1 = pi.Pi(val1);
         var pi2 = pi.Pi(val2);
 
         var result = count(pi1.before, pi2.before, '/');
 
-        if (result == '0'){
+        if (result == '0') {
             return '0';
         } else {
             return result;
