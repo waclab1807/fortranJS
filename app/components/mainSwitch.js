@@ -621,16 +621,16 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         result = count(val1, helpers.changeDotToNormal(val2), '/');
                         break;
                 }
-
             }
 
             else {
 
                 var czyDzialanie = true;
+
                 if (isNaN(parseFloat(val1)) || isNaN(parseFloat(val2))) {
 
-                    console.log("pojedyncza liczba")
-                    czyDzialanie =  false;
+                    console.log("wypelniony tylko jeden input")
+                    czyDzialanie = false;
                     var onlyValue;
 
                     if (isNaN(parseFloat(val1))) {
@@ -645,6 +645,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         onlyValue = 0;
                     }
                 }
+
                 else {
                     console.log("liczba z liczba")
                     var value1 = parseFloat(val1);
@@ -654,7 +655,8 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                 switch (operator) {
 
                     case '+':
-                        if(czyDzialanie) {
+                        if (czyDzialanie) {
+                            console.log('liczba z liczba: dodawanie');
                             result = value1 + value2;
                         }
                         else {
@@ -663,7 +665,8 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
 
                     case '-':
-                        if(czyDzialanie) {
+                        if (czyDzialanie) {
+                            console.log('liczba z liczba: odejmowanie');
                             result = value1 - value2;
                         }
                         else {
@@ -672,7 +675,8 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
 
                     case '*':
-                        if(czyDzialanie) {
+                        if (czyDzialanie) {
+                            console.log('liczba z liczba: mnozenie');
                             result = value1 * value2;
                         }
                         else {
@@ -681,7 +685,8 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
 
                     case '/':
-                        if(czyDzialanie) {
+                        if (czyDzialanie) {
+                            console.log('liczba z liczba: dzielenie');
                             result = skrocUlamek(value1 + '/' + value2);
                         }
                         else {
@@ -689,9 +694,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         }
                         break;
                 }
-
             }
-
         }
 
         return result.toString();
@@ -719,7 +722,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
     function jakieToWyrazenie(value) {
         value = value.replace(/\s/g, ''); // remove whitespaces
 
-        console.log('value', value);
+        // console.log('value', value);
 
         // value has brackets
         if (value.includes('(') && value.includes(')')) {
@@ -731,8 +734,22 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
             return jakieToWyrazenie(value);
         }
 
-        else {
-            // value has no brackets
+        //value has negative numbers
+        else if (value.startsWith('-') || value.includes('+-') || value.includes('--') || value.includes('/-') || value.includes('*-')) {
+            if(value.replace(/^-|\+-|--|\*-|\/-/g, "") !== '') {
+                // console.log(value.match(/^-|\+-|--|\*-|\/-/g).length);
+                value = value.replace(/(^-|\+-|--|\*-|\/-)/g, "");
+                console.log(value.replace(/^-|\+-|--|\*-|\/-/g, ""));
+                // console.log(value.replace(/(^-|\+-|--|\*-|\/-)/g, ""));
+                // console.log('som')
+                console.log('value', value);
+                return jakieToWyrazenie(value);
+            }
+        }
+
+        else
+        {
+            // value has no brackets and no negatives values
             console.log('value', value);
             if (value.includes('+') || value.includes('-')) {
                 //delete minus from beginning of string
