@@ -722,7 +722,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
     function jakieToWyrazenie(value) {
         value = value.replace(/\s/g, ''); // remove whitespaces
 
-        console.log('value', value);
+        console.log('value', value, " (jakieToWyrazenie)");
 
         // value has brackets
         if (value.includes('(') && value.includes(')')) {
@@ -748,10 +748,8 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
             }
         }
 
-        else
-        {
-            // value has no brackets and no negatives values
-            console.log('value', value);
+        // value has no brackets and no negatives values
+        else {
             if (value.includes('+') || value.includes('-')) {
                 //delete minus from beginning of string
                 if (value.startsWith('-')) {
