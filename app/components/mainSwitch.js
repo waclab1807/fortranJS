@@ -31,7 +31,9 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
                 }
 
-            } else if (val2.includes('\u221a')) {
+            }
+
+            else if (val2.includes('\u221a')) {
 
                 console.log('ulamek z pierwiastkiem');
 
@@ -50,7 +52,9 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
                 }
 
-            } else if (val2.includes('^')) {
+            }
+
+            else if (val2.includes('^')) {
 
                 console.log('ulamek z potęgą');
 
@@ -69,7 +73,9 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
                 }
 
-            } else if (val2.includes('π')) {
+            }
+
+            else if (val2.includes('π')) {
 
                 console.log('ulamek z pi');
 
@@ -88,7 +94,9 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
                 }
 
-            } else if (val2.includes('.')) {
+            }
+
+            else if (val2.includes('.')) {
 
                 console.log('ulamek z liczbą dziesiętną');
 
@@ -107,7 +115,9 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
                 }
 
-            } else {
+            }
+
+            else {
 
                 console.log('ulamek z liczbą');
 
@@ -154,7 +164,9 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
                 }
 
-            } else if (val2.includes('\u221a')) {
+            }
+
+            else if (val2.includes('\u221a')) {
 
                 console.log('pierwiastek z pierwiastkiem');
 
@@ -173,7 +185,9 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
                 }
 
-            } else if (val2.includes('^')) {
+            }
+
+            else if (val2.includes('^')) {
 
                 console.log('pierwiastek z potęgą');
 
@@ -192,7 +206,9 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
                 }
 
-            } else if (val2.includes('π')) {
+            }
+
+            else if (val2.includes('π')) {
 
                 console.log('pierwiastek z pi');
 
@@ -211,7 +227,9 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
                 }
 
-            } else if (val2.includes('.')) {
+            }
+
+            else if (val2.includes('.')) {
 
                 console.log('pierwiastek z liczbą dziesiętną');
 
@@ -230,7 +248,9 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
                 }
 
-            } else {
+            }
+
+            else {
 
                 console.log('pierwiastek z liczbą');
 
@@ -277,7 +297,9 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
                 }
 
-            } else if (val2.includes('\u221a')) {
+            }
+
+            else if (val2.includes('\u221a')) {
 
                 console.log('potęga z pierwiastkiem');
 
@@ -296,7 +318,9 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
                 }
 
-            } else if (val2.includes('^')) {
+            }
+
+            else if (val2.includes('^')) {
 
                 console.log('potęga z potęgą');
 
@@ -315,7 +339,9 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
                 }
 
-            } else if (val2.includes('π')) {
+            }
+
+            else if (val2.includes('π')) {
 
                 console.log('potęga z pi');
 
@@ -334,7 +360,9 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
                 }
 
-            } else if (val2.includes('.')) {
+            }
+
+            else if (val2.includes('.')) {
 
                 console.log('potęga z liczbą dziesiętną');
 
@@ -353,7 +381,9 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
                 }
 
-            } else {
+            }
+
+            else {
 
                 console.log('potęga z liczbą');
 
@@ -397,7 +427,9 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
                 }
 
-            } else if (val2.includes('\u221a')) {
+            }
+
+            else if (val2.includes('\u221a')) {
 
                 console.log('pi z pierwiastkiem');
 
@@ -416,7 +448,9 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
                 }
 
-            } else if (val2.includes('^')) {
+            }
+
+            else if (val2.includes('^')) {
 
                 console.log('pi z potęgą');
 
@@ -435,7 +469,9 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
                 }
 
-            } else if (val2.includes('π')) {
+            }
+
+            else if (val2.includes('π')) {
 
                 console.log('pi z pi');
 
@@ -456,7 +492,9 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
                 }
 
-            } else if (val2.includes('.')) {
+            }
+
+            else if (val2.includes('.')) {
 
                 console.log('pi z liczbą dziesiętną');
 
@@ -475,7 +513,9 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
                 }
 
-            } else {
+            }
+
+            else {
 
                 console.log('pi z liczbą');
 
@@ -506,7 +546,9 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
                 count(helpers.changeDotToNormal(val1), helpers.changeDotToNormal(val2), operator);
 
-            } else {
+            }
+
+            else {
 
                 console.log('liczba dziesiętna z czymkolwiek');
 
