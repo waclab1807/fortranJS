@@ -870,6 +870,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                 jakieToWyrazenie(value).includes('-') ||
                 ((value.match(/\//g) || []).length > 1)){
             return true;
+            
         }
         else {
             return false;
