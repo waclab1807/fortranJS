@@ -855,6 +855,27 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
     }
 
+    function czyJestDzialaniem(value) {
+        if (value.startsWith('-')){
+            value = value.substring(1, value.length);
+        }
+
+        // tylko liczba
+        if (!(value.includes('+')) && !(value.includes('-')) && !(value.includes('/')) && !(value.includes('*')) && !(value.includes('√')) && !(value.includes('^')) && !(value.includes('π'))){
+            console.log("czyJestDzialaniem: tylko liczba");
+            return false;
+        }
+        else if(jakieToWyrazenie(value).includes('*') ||
+                jakieToWyrazenie(value).includes('+') ||
+                jakieToWyrazenie(value).includes('-') ||
+                ((value.match(/\//g) || []).length > 1)){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
     /** get operator type */
     function operatorOperacji(string) {
         if (string.includes('+')) {
@@ -1035,6 +1056,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
     return {
         jakie: jakieToWyrazenie,
-        count: count
+        count: count,
+        czy: czyJestDzialaniem
     }
 }]);
