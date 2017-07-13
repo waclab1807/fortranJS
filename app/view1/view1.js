@@ -15,9 +15,9 @@ app.controller('View1Ctrl', ['$scope', 'mainSwitch', function($scope, mainSwitch
   $('#pi').text('( ) '+'π');
   $('#pow').text('( ) ^ ( )');
 
-  $scope.val1 = '-1*7';
-  $scope.operator = '';
-  $scope.val2 = '';
+  $scope.val1 = '8/1*2/7/3';
+  $scope.operator = '*';
+  $scope.val2 = '1';
 
   /** get id of focused input */
   $scope.setId = function(id) {

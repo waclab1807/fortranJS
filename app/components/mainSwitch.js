@@ -2,8 +2,8 @@
  * Created by waclabdev on 28.08.16.
  */
 
-app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', function(ulamek, potega, pierwiastek, pi, helpers) {
-    var count = function(val1, val2, operator) {
+app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', function (ulamek, potega, pierwiastek, pi, helpers) {
+    var count = function (val1, val2, operator) {
         var result = '';
         var what = '', what2 = '';
         var arr = [], arr2 = [];
@@ -73,16 +73,16 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
                 switch (operator) {
                     case '+':
-                        result = val1 +  ' + ' +  val2;
+                        result = val1 + ' + ' + val2;
                         break;
                     case '-':
-                        result = val1 +  ' - ' +  val2;
+                        result = val1 + ' - ' + val2;
                         break;
                     case '*':
-                        result = val1 +  ' * ' +  val2;
+                        result = val1 + ' * ' + val2;
                         break;
                     case '/':
-                        result = val1 +  ' / ' +  val2;
+                        result = val1 + ' / ' + val2;
                         break;
                 }
 
@@ -92,16 +92,16 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
                 switch (operator) {
                     case '+':
-                        result = val1 +  ' + ' +  val2;
+                        result = val1 + ' + ' + val2;
                         break;
                     case '-':
-                        result = val1 +  ' - ' +  val2;
+                        result = val1 + ' - ' + val2;
                         break;
                     case '*':
-                        result = val1 +  ' * ' +  val2;
+                        result = val1 + ' * ' + val2;
                         break;
                     case '/':
-                        result = val1 +  ' / ' +  val2;
+                        result = val1 + ' / ' + val2;
                         break;
                 }
 
@@ -111,16 +111,16 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
                 switch (operator) {
                     case '+':
-                        result = val1 +  ' + ' +  val2;
+                        result = val1 + ' + ' + val2;
                         break;
                     case '-':
-                        result = val1 +  ' - ' +  val2;
+                        result = val1 + ' - ' + val2;
                         break;
                     case '*':
-                        result = val1 +  ' * ' +  val2;
+                        result = val1 + ' * ' + val2;
                         break;
                     case '/':
-                        result = val1 +  ' / ' +  val2;
+                        result = val1 + ' / ' + val2;
                         break;
                 }
 
@@ -149,17 +149,17 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
                 switch (operator) {
                     case '+':
-                        result = val1 +  ' + ' +  val2;
+                        result = val1 + ' + ' + val2;
                         break;
                     case '-':
-                        result = val1 +  ' - ' +  val2;
+                        result = val1 + ' - ' + val2;
                         break;
                     case '*':
-                        result = count(val1, val2+'/1', '*');
+                        result = count(val1, val2 + '/1', '*');
                         //result = val1 +  ' * ' +  val2;
                         break;
                     case '/':
-                        result = val1 +  '/' +  val2;
+                        result = val1 + '/' + val2;
                         break;
                 }
 
@@ -176,16 +176,16 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
                 switch (operator) {
                     case '+':
-                        result = val1 +  ' + ' +  val2;
+                        result = val1 + ' + ' + val2;
                         break;
                     case '-':
-                        result = val1 +  ' - ' +  val2;
+                        result = val1 + ' - ' + val2;
                         break;
                     case '*':
-                        result = val1 +  ' * ' +  val2;
+                        result = val1 + ' * ' + val2;
                         break;
                     case '/':
-                        result = val1 +  ' / ' +  val2;
+                        result = val1 + ' / ' + val2;
                         break;
                 }
 
@@ -195,16 +195,16 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
                 switch (operator) {
                     case '+':
-                        result = val1 +  ' + ' +  val2;
+                        result = val1 + ' + ' + val2;
                         break;
                     case '-':
-                        result = val1 +  ' - ' +  val2;
+                        result = val1 + ' - ' + val2;
                         break;
                     case '*':
-                        result = val1 +  ' * ' +  val2;
+                        result = val1 + ' * ' + val2;
                         break;
                     case '/':
-                        result = val1 +  ' / ' +  val2;
+                        result = val1 + ' / ' + val2;
                         break;
                 }
 
@@ -214,16 +214,16 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
                 switch (operator) {
                     case '+':
-                        result = val1 +  ' + ' +  val2;
+                        result = val1 + ' + ' + val2;
                         break;
                     case '-':
-                        result = val1 +  ' - ' +  val2;
+                        result = val1 + ' - ' + val2;
                         break;
                     case '*':
-                        result = val1 +  ' * ' +  val2;
+                        result = val1 + ' * ' + val2;
                         break;
                     case '/':
-                        result = val1 +  ' / ' +  val2;
+                        result = val1 + ' / ' + val2;
                         break;
                 }
 
@@ -233,16 +233,16 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
                 switch (operator) {
                     case '+':
-                        result = val1 +  ' + ' +  val2;
+                        result = val1 + ' + ' + val2;
                         break;
                     case '-':
-                        result = val1 +  ' - ' +  val2;
+                        result = val1 + ' - ' + val2;
                         break;
                     case '*':
-                        result = val1 +  ' * ' +  val2;
+                        result = val1 + ' * ' + val2;
                         break;
                     case '/':
-                        result = val1 +  ' / ' +  val2;
+                        result = val1 + ' / ' + val2;
                         break;
                 }
 
@@ -271,16 +271,16 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
                 switch (operator) {
                     case '+':
-                        result = val1 +  ' + ' +  val2;
+                        result = val1 + ' + ' + val2;
                         break;
                     case '-':
-                        result = val1 +  ' - ' +  val2;
+                        result = val1 + ' - ' + val2;
                         break;
                     case '*':
-                        result = val1 +  ' * ' +  val2;
+                        result = val1 + ' * ' + val2;
                         break;
                     case '/':
-                        result = val1 +  ' / ' +  val2;
+                        result = val1 + ' / ' + val2;
                         break;
                 }
 
@@ -297,16 +297,16 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
                 switch (operator) {
                     case '+':
-                        result = val1 +  ' + ' +  val2;
+                        result = val1 + ' + ' + val2;
                         break;
                     case '-':
-                        result = val1 +  ' - ' +  val2;
+                        result = val1 + ' - ' + val2;
                         break;
                     case '*':
-                        result = val1 +  ' * ' +  val2;
+                        result = val1 + ' * ' + val2;
                         break;
                     case '/':
-                        result = val1 +  ' / ' +  val2;
+                        result = val1 + ' / ' + val2;
                         break;
                 }
 
@@ -316,16 +316,16 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
                 switch (operator) {
                     case '+':
-                        result = val1 +  ' + ' +  val2;
+                        result = val1 + ' + ' + val2;
                         break;
                     case '-':
-                        result = val1 +  ' - ' +  val2;
+                        result = val1 + ' - ' + val2;
                         break;
                     case '*':
-                        result = val1 +  ' * ' +  val2;
+                        result = val1 + ' * ' + val2;
                         break;
                     case '/':
-                        result = val1 +  ' / ' +  val2;
+                        result = val1 + ' / ' + val2;
                         break;
                 }
 
@@ -335,16 +335,16 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
                 switch (operator) {
                     case '+':
-                        result = val1 +  ' + ' +  val2;
+                        result = val1 + ' + ' + val2;
                         break;
                     case '-':
-                        result = val1 +  ' - ' +  val2;
+                        result = val1 + ' - ' + val2;
                         break;
                     case '*':
-                        result = val1 +  ' * ' +  val2;
+                        result = val1 + ' * ' + val2;
                         break;
                     case '/':
-                        result = val1 +  ' / ' +  val2;
+                        result = val1 + ' / ' + val2;
                         break;
                 }
 
@@ -354,16 +354,16 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
                 switch (operator) {
                     case '+':
-                        result = val1 +  ' + ' +  val2;
+                        result = val1 + ' + ' + val2;
                         break;
                     case '-':
-                        result = val1 +  ' - ' +  val2;
+                        result = val1 + ' - ' + val2;
                         break;
                     case '*':
-                        result = val1 +  ' * ' +  val2;
+                        result = val1 + ' * ' + val2;
                         break;
                     case '/':
-                        result = val1 +  ' / ' +  val2;
+                        result = val1 + ' / ' + val2;
                         break;
                 }
 
@@ -392,16 +392,16 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
                 switch (operator) {
                     case '+':
-                        result = val1 +  ' + ' +  val2;
+                        result = val1 + ' + ' + val2;
                         break;
                     case '-':
-                        result = val1 +  ' - ' +  val2;
+                        result = val1 + ' - ' + val2;
                         break;
                     case '*':
-                        result = val1 +  ' * ' +  val2;
+                        result = val1 + ' * ' + val2;
                         break;
                     case '/':
-                        result = val1 +  ' / ' +  val2;
+                        result = val1 + ' / ' + val2;
                         break;
                 }
 
@@ -415,16 +415,16 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
                 switch (operator) {
                     case '+':
-                        result = val1 +  ' + ' +  val2;
+                        result = val1 + ' + ' + val2;
                         break;
                     case '-':
-                        result = val1 +  ' - ' +  val2;
+                        result = val1 + ' - ' + val2;
                         break;
                     case '*':
-                        result = val1 +  ' * ' +  val2;
+                        result = val1 + ' * ' + val2;
                         break;
                     case '/':
-                        result = val1 +  ' / ' +  val2;
+                        result = val1 + ' / ' + val2;
                         break;
                 }
 
@@ -434,16 +434,16 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
                 switch (operator) {
                     case '+':
-                        result = val1 +  ' + ' +  val2;
+                        result = val1 + ' + ' + val2;
                         break;
                     case '-':
-                        result = val1 +  ' - ' +  val2;
+                        result = val1 + ' - ' + val2;
                         break;
                     case '*':
-                        result = val1 +  ' * ' +  val2;
+                        result = val1 + ' * ' + val2;
                         break;
                     case '/':
-                        result = val1 +  ' / ' +  val2;
+                        result = val1 + ' / ' + val2;
                         break;
                 }
 
@@ -453,16 +453,16 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
                 switch (operator) {
                     case '+':
-                        result = val1 +  ' + ' +  val2;
+                        result = val1 + ' + ' + val2;
                         break;
                     case '-':
-                        result = val1 +  ' - ' +  val2;
+                        result = val1 + ' - ' + val2;
                         break;
                     case '*':
-                        result = val1 +  ' * ' +  val2;
+                        result = val1 + ' * ' + val2;
                         break;
                     case '/':
-                        result = val1 +  ' / ' +  val2;
+                        result = val1 + ' / ' + val2;
                         break;
                 }
 
@@ -512,10 +512,10 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
                 switch (operator) {
                     case '+':
-                        result = val1 +  ' + ' +  val2;
+                        result = val1 + ' + ' + val2;
                         break;
                     case '-':
-                        result = val1 +  ' - ' +  val2;
+                        result = val1 + ' - ' + val2;
                         break;
                     case '*':
                         result = pomnozLiczbeiPi(val2, val1);
@@ -571,16 +571,16 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
                 switch (operator) {
                     case '+':
-                        result = val1 +  ' + ' +  val2;
+                        result = val1 + ' + ' + val2;
                         break;
                     case '-':
-                        result = val1 +  ' - ' +  val2;
+                        result = val1 + ' - ' + val2;
                         break;
                     case '*':
-                        result = val1 +  ' * ' +  val2;
+                        result = val1 + ' * ' + val2;
                         break;
                     case '/':
-                        result = val1 +  ' / ' +  val2;
+                        result = val1 + ' / ' + val2;
                         break;
                 }
 
@@ -590,16 +590,16 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
                 switch (operator) {
                     case '+':
-                        result = val1 +  ' + ' +  val2;
+                        result = val1 + ' + ' + val2;
                         break;
                     case '-':
-                        result = val1 +  ' - ' +  val2;
+                        result = val1 + ' - ' + val2;
                         break;
                     case '*':
-                        result = val1 +  ' * ' +  val2;
+                        result = val1 + ' * ' + val2;
                         break;
                     case '/':
-                        result = val1 +  ' / ' +  val2;
+                        result = val1 + ' / ' + val2;
                         break;
                 }
 
@@ -609,10 +609,10 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
                 switch (operator) {
                     case '+':
-                        result = val1 +  ' + ' +  val2;
+                        result = val1 + ' + ' + val2;
                         break;
                     case '-':
-                        result = val1 +  ' - ' +  val2;
+                        result = val1 + ' - ' + val2;
                         break;
                     case '*':
                         result = pomnozLiczbeiPi(val1, val2);
@@ -650,7 +650,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
                 switch (operator) {
                     case '+':
-                        result = value1 +  value2;
+                        result = value1 + value2;
                         break;
                     case '-':
                         result = value1 - value2;
@@ -671,8 +671,8 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
         return result.toString();
     };
 
-    function usunZawartoscNawiasow (string) {
-        for (var i=0; i< string.length; i++) {
+    function usunZawartoscNawiasow(string) {
+        for (var i = 0; i < string.length; i++) {
             if (value.charAt(i) == '(') {
                 flagaO = i;
                 counter++;
@@ -683,14 +683,14 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
         }
     }
 
-    function removeFromBrackets (arr, a, b) {
-        for (var y=a; y<=b; y++) {
+    function removeFromBrackets(arr, a, b) {
+        for (var y = a; y <= b; y++) {
             arr[y] = "$";
         }
         return arr;
     }
 
-    function czyJestWyrazeniem (val) {
+    function czyJestWyrazeniem(val) {
         if (helpers.jakieToWyrazenie(val).includes('*') ||
             helpers.jakieToWyrazenie(val).includes('+') ||
             (helpers.jakieToWyrazenie(val).includes('-') && !val.startsWith('-'))) {
@@ -722,14 +722,14 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
         return count(licznik, mianownik, '/');
     }
 
-    function dodajUlamki (val1, val2) {
+    function dodajUlamki(val1, val2) {
 
         var nominator;
         var denominator;
         var ulamek1 = ulamek.Ulamek(val1);
         var ulamek2 = ulamek.Ulamek(val2);
 
-        if(ulamek1.after != ulamek2.after) {                // denominators aren't equal
+        if (ulamek1.after != ulamek2.after) {                // denominators aren't equal
             var nominator1 = count(ulamek1.before, ulamek2.after, '*');
             denominator = count(ulamek1.after, ulamek2.after, '*');
             var nominator2 = count(ulamek2.before, ulamek1.after, '*');
@@ -742,7 +742,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
         return count(nominator, denominator, '/');
     }
 
-    function skrocUlamek (string) {
+    function skrocUlamek(string) {
 
         var ul = ulamek.Ulamek(string);
         if (ul.after == '0' || ul.after == '0.0' || ul.after == '-0' || ul.after == '-0.0') {
@@ -763,7 +763,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
         }
     }
 
-    function pomnozLiczbeiPi (liczba, val2) {
+    function pomnozLiczbeiPi(liczba, val2) {
         var liczbaPi = pi.Pi(val2);
         var result = count(liczba, liczbaPi.before, '*');
         if (result != 0) {
@@ -773,7 +773,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
         }
     }
 
-    function podzielLiczbeiPi (liczba, val2) {
+    function podzielLiczbeiPi(liczba, val2) {
         var liczbaPi = pi.Pi(val2);
         var tmp = count(liczba, liczbaPi.before, '/');
         if (tmp.includes('/')) {
@@ -784,7 +784,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
         }
     }
 
-    function odejmijUlamki (val1, val2) {
+    function odejmijUlamki(val1, val2) {
         var ul1 = ulamek.Ulamek(val1);
         var ul2 = ulamek.Ulamek(val2);
         var licznik, mianownik, licznikx, mianownikx, liczniky;
@@ -805,7 +805,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
         return skrocUlamek(licznik + '/' + mianownik);
     }
 
-    function pomnozUlamki (val1, val2) {
+    function pomnozUlamki(val1, val2) {
         var ul1 = ulamek.Ulamek(val1);
         var ul2 = ulamek.Ulamek(val2);
         var licznik, mianownik;
@@ -816,7 +816,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
         return count(licznik, mianownik, '/');
     }
 
-    function podzielUlamki (val1, val2) {
+    function podzielUlamki(val1, val2) {
         var ul1 = ulamek.Ulamek(val1);
         var ul2 = ulamek.Ulamek(val2);
         var licznik, mianownik;
@@ -827,52 +827,52 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
         return count(licznik, mianownik, '/');
     }
 
-    function dodajPi (val1, val2) {
+    function dodajPi(val1, val2) {
         var pi1 = pi.Pi(val1);
         var pi2 = pi.Pi(val2);
 
         var result = count(pi1.before, pi2.before, '+');
 
-        if (result == '0'){
+        if (result == '0') {
             return '0';
         } else {
             return result + 'π';
         }
     }
 
-    function odejmijPi (val1, val2) {
+    function odejmijPi(val1, val2) {
         var pi1 = pi.Pi(val1);
         var pi2 = pi.Pi(val2);
 
         var result = count(pi1.before, pi2.before, '-');
 
-        if (result == '0'){
+        if (result == '0') {
             return '0';
         } else {
             return result + 'π';
         }
     }
 
-    function pomnozPi (val1, val2) {
+    function pomnozPi(val1, val2) {
         var pi1 = pi.Pi(val1);
         var pi2 = pi.Pi(val2);
 
         var result = count(pi1.before, pi2.before, '*');
 
-        if (result == '0'){
+        if (result == '0') {
             return '0';
         } else {
             return '(' + result + ')π^2';
         }
     }
 
-    function podzielPi (val1, val2) {
+    function podzielPi(val1, val2) {
         var pi1 = pi.Pi(val1);
         var pi2 = pi.Pi(val2);
 
         var result = count(pi1.before, pi2.before, '/');
 
-        if (result == '0'){
+        if (result == '0') {
             return '0';
         } else {
             return result;

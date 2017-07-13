@@ -39,17 +39,29 @@ app.factory('helpers', function() {
         }
     }
 
-    function jakieToWyrazenie (value) {         // TODO -1*8 returns '-' but should return '*'
+    function jakieToWyrazenie (value) {
         value = value.replace(/\s/g, ''); // remove whitespaces
 
         // value has brackets
         if (value.includes('(') && value.includes(')')) {
             if (value.replace(/\(([^()]*)\)/g, "") == '') {
-                value = value.substring(1, value.length-1);
+                value = value.substring(1, value.length - 1);
             } else {
                 value = value.replace(/\(([^()]*)\)/g, "$");
             }
             return jakieToWyrazenie(value);
+
+            //value has negative numbers
+        } else if (value.startsWith('-') || value.includes('+-') || value.includes('--') || value.includes('/-') || value.includes('*-')) {
+            if(value.replace(/^-|\+-|--|\*-|\/-/g, "") !== '') {
+                value = value.replace(/^-/g, "");
+                value = value.replace(/(-(-))/g, '-');
+                value = value.replace(/(\+(-))/g, '+');
+                value = value.replace(/(\/(-))/g, '/');
+                value = value.replace(/(\*(-))/g, '*');
+               return jakieToWyrazenie(value);
+            }
+                                                                //TODO missing else statement ?? need to handle this
         } else {
             // value has no brackets
             //console.log('value', value);
