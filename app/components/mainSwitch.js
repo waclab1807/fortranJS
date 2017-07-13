@@ -156,10 +156,9 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
                     case '*':
                         result = count(val1, val2 + '/1', '*');
-                        //result = val1 +  ' * ' +  val2;
                         break;
                     case '/':
-                        result = val1 + '/' + val2;
+                        result = count(val1, '1/' + val2, '*');
                         break;
                 }
 
