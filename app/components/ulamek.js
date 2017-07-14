@@ -2,7 +2,7 @@
  * Created by waclabdev on 28.08.16.
  */
 
-app.factory('ulamek', function() {
+app.factory('ulamek', function(helpers) {
     function Ulamek (string) {
 
         function ulamek(before, after) {
@@ -10,11 +10,12 @@ app.factory('ulamek', function() {
             this.after = after;
         }
 
+        // todo uwzględnić nawiasy => (16 / 7)
         if (string.includes('/')){
-            var split = string.split('/');
-            return new ulamek(split[0], split[1]);
+            var arr = helpers.devide(string, '/');
+            return new ulamek(arr[0], arr[1]);
         } else {
-            return new ulamek(string, '1');
+            return new ulamek(string, '1'); // jesli string nie byl ulamkiem to zrobi z niego ulamek => x/1
         }
 
     }

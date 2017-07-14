@@ -4,10 +4,46 @@
 
 app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', function (ulamek, potega, pierwiastek, pi, helpers) {
     var count = function (val1, val2, operator) {
-
         var result = '';
+        var what = '', what2 = '';
+        var arr = [], arr2 = [];
 
-        if (val1.includes('/')) {
+        console.warn('policz:', val1, operator, val2);
+
+        if (czyJestWyrazeniem(val1) || czyJestWyrazeniem(val2)) {
+            console.log('czy', val1, 'jest wyrazeniem?', czyJestWyrazeniem(val1) ? 'tak' : 'nie');
+            console.log('czy', val2, 'jest wyrazeniem?', czyJestWyrazeniem(val2) ? 'tak' : 'nie');
+
+            if (czyJestWyrazeniem(val1) && !czyJestWyrazeniem(val2)) {
+                what = helpers.jakieToWyrazenie(val1);
+
+                arr = helpers.devide(val1, what);
+
+                result = count(arr[0], arr[1], what);
+                if (result == val1) {
+                    result = result + operator + val2;
+                } else {
+                    result = count(result, val2, operator);
+                }
+            }
+            if (!czyJestWyrazeniem(val1) && czyJestWyrazeniem(val2)) {
+                what = helpers.jakieToWyrazenie(val2);
+
+                arr = helpers.devide(val2, what);
+
+                result = count(val1, count(arr[0], arr[1], what), operator);
+            }
+            if (czyJestWyrazeniem(val1) && czyJestWyrazeniem(val2)) {
+                what = helpers.jakieToWyrazenie(val1);
+                what2 = helpers.jakieToWyrazenie(val2);
+
+                arr = helpers.devide(val1, what);
+                arr2 = helpers.devide(val2, what2);
+
+                result = count(count(arr[0], arr[1], what), count(arr2[0], arr2[1], what2), operator);
+            }
+        }
+        else if (val1.includes('/')) {
 
             //var ul = ulamek.Ulamek(val1);
             //value1 = parseFloat(count(ul.before, ul.after,'/'));
@@ -31,9 +67,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
                 }
 
-            }
-
-            else if (val2.includes('\u221a')) {
+            } else if (val2.includes('\u221a')) {
 
                 console.log('ulamek z pierwiastkiem');
 
@@ -52,9 +86,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
                 }
 
-            }
-
-            else if (val2.includes('^')) {
+            } else if (val2.includes('^')) {
 
                 console.log('ulamek z potęgą');
 
@@ -73,9 +105,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
                 }
 
-            }
-
-            else if (val2.includes('π')) {
+            } else if (val2.includes('π')) {
 
                 console.log('ulamek z pi');
 
@@ -94,9 +124,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
                 }
 
-            }
-
-            else if (val2.includes('.')) {
+            } else if (val2.includes('.')) {
 
                 console.log('ulamek z liczbą dziesiętną');
 
@@ -115,9 +143,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
                 }
 
-            }
-
-            else {
+            } else {
 
                 console.log('ulamek z liczbą');
 
@@ -129,18 +155,16 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         result = val1 + ' - ' + val2;
                         break;
                     case '*':
-                        result = val1 + ' * ' + val2;
+                        result = count(val1, val2 + '/1', '*');
                         break;
                     case '/':
-                        result = val1 + ' / ' + val2;
+                        result = count(val1, '1/' + val2, '*');
                         break;
                 }
 
             }
 
-        }
-
-        else if (val1.includes('\u221a')) {
+        } else if (val1.includes('\u221a')) {
 
             //var sqrt = pierwiastek.Pierwiastek(val1);
             //value1 = parseFloat(count(sqrt.before, sqrt.after,'/'));
@@ -164,9 +188,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
                 }
 
-            }
-
-            else if (val2.includes('\u221a')) {
+            } else if (val2.includes('\u221a')) {
 
                 console.log('pierwiastek z pierwiastkiem');
 
@@ -185,9 +207,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
                 }
 
-            }
-
-            else if (val2.includes('^')) {
+            } else if (val2.includes('^')) {
 
                 console.log('pierwiastek z potęgą');
 
@@ -206,9 +226,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
                 }
 
-            }
-
-            else if (val2.includes('π')) {
+            } else if (val2.includes('π')) {
 
                 console.log('pierwiastek z pi');
 
@@ -227,9 +245,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
                 }
 
-            }
-
-            else if (val2.includes('.')) {
+            } else if (val2.includes('.')) {
 
                 console.log('pierwiastek z liczbą dziesiętną');
 
@@ -248,9 +264,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
                 }
 
-            }
-
-            else {
+            } else {
 
                 console.log('pierwiastek z liczbą');
 
@@ -271,9 +285,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
             }
 
-        }
-
-        else if (val1.includes('^')) {
+        } else if (val1.includes('^')) {
 
             //var pow = potega.Potega(val1);
             //value1 = parseFloat(count(pow.before, pow.after,'*'));
@@ -297,9 +309,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
                 }
 
-            }
-
-            else if (val2.includes('\u221a')) {
+            } else if (val2.includes('\u221a')) {
 
                 console.log('potęga z pierwiastkiem');
 
@@ -318,9 +328,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
                 }
 
-            }
-
-            else if (val2.includes('^')) {
+            } else if (val2.includes('^')) {
 
                 console.log('potęga z potęgą');
 
@@ -339,9 +347,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
                 }
 
-            }
-
-            else if (val2.includes('π')) {
+            } else if (val2.includes('π')) {
 
                 console.log('potęga z pi');
 
@@ -360,9 +366,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
                 }
 
-            }
-
-            else if (val2.includes('.')) {
+            } else if (val2.includes('.')) {
 
                 console.log('potęga z liczbą dziesiętną');
 
@@ -381,9 +385,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
                 }
 
-            }
-
-            else {
+            } else {
 
                 console.log('potęga z liczbą');
 
@@ -404,9 +406,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
             }
 
-        }
-
-        else if (val1.includes('π')) {
+        } else if (val1.includes('π')) {
 
             if (val2.includes('/')) {
 
@@ -427,9 +427,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
                 }
 
-            }
-
-            else if (val2.includes('\u221a')) {
+            } else if (val2.includes('\u221a')) {
 
                 console.log('pi z pierwiastkiem');
 
@@ -448,9 +446,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
                 }
 
-            }
-
-            else if (val2.includes('^')) {
+            } else if (val2.includes('^')) {
 
                 console.log('pi z potęgą');
 
@@ -469,9 +465,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
                 }
 
-            }
-
-            else if (val2.includes('π')) {
+            } else if (val2.includes('π')) {
 
                 console.log('pi z pi');
 
@@ -492,9 +486,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
                 }
 
-            }
-
-            else if (val2.includes('.')) {
+            } else if (val2.includes('.')) {
 
                 console.log('pi z liczbą dziesiętną');
 
@@ -513,9 +505,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
                 }
 
-            }
-
-            else {
+            } else {
 
                 console.log('pi z liczbą');
 
@@ -536,9 +526,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
             }
 
-        }
-
-        else if (val1.includes('.')) {
+        } else if (val1.includes('.')) {
 
             if (val2.includes('.')) {
 
@@ -546,9 +534,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
                 count(helpers.changeDotToNormal(val1), helpers.changeDotToNormal(val2), operator);
 
-            }
-
-            else {
+            } else {
 
                 console.log('liczba dziesiętna z czymkolwiek');
 
@@ -556,9 +542,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
 
             }
 
-        }
-
-        else {
+        } else {
 
             if (val2.includes('/')) {
 
@@ -580,9 +564,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
                 }
 
-            }
-
-            else if (val2.includes('\u221a')) {
+            } else if (val2.includes('\u221a')) {
 
                 console.log('liczba z pierwiastkiem');
 
@@ -601,9 +583,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
                 }
 
-            }
-
-            else if (val2.includes('^')) {
+            } else if (val2.includes('^')) {
 
                 console.log('liczba z potęgą');
 
@@ -622,9 +602,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
                 }
 
-            }
-
-            else if (val2.includes('π')) {
+            } else if (val2.includes('π')) {
 
                 console.log('liczba z pi');
 
@@ -643,11 +621,9 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         break;
                 }
 
-            }
+            } else if (val2.includes('.')) {
 
-            else if (val2.includes('.')) {
-
-                console.log('liczba z liczba dziesietna');
+                console.log('liczba z liczbą dziesiętną');
 
                 switch (operator) {
                     case '+':
@@ -663,82 +639,34 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
                         result = count(val1, helpers.changeDotToNormal(val2), '/');
                         break;
                 }
-            }
 
-            else {
+            } else {
 
-                var czyDzialanie = true;
+                console.log('liczba z liczbą');
 
-                if (isNaN(parseFloat(val1)) || isNaN(parseFloat(val2))) {
-
-                    console.log("wypelniony tylko jeden input")
-                    czyDzialanie = false;
-                    var onlyValue;
-
-                    if (isNaN(parseFloat(val1))) {
-                        onlyValue = parseFloat(val2);
-                    }
-
-                    else if (isNaN(parseFloat(val2))) {
-                        onlyValue = parseFloat(val1);
-                    }
-
-                    else {
-                        onlyValue = 0;
-                    }
-                }
-
-                else {
-                    console.log("liczba z liczba")
-                    var value1 = parseFloat(val1);
-                    var value2 = parseFloat(val2);
-                }
+                var value1 = parseFloat(val1);
+                var value2 = parseFloat(val2);
 
                 switch (operator) {
-
                     case '+':
-                        if (czyDzialanie) {
-                            console.log('liczba z liczba: dodawanie');
-                            result = value1 + value2;
-                        }
-                        else {
-                            result = onlyValue;
-                        }
+                        result = value1 + value2;
                         break;
-
                     case '-':
-                        if (czyDzialanie) {
-                            console.log('liczba z liczba: odejmowanie');
-                            result = value1 - value2;
-                        }
-                        else {
-                            result = onlyValue;
-                        }
+                        result = value1 - value2;
                         break;
-
                     case '*':
-                        if (czyDzialanie) {
-                            console.log('liczba z liczba: mnozenie');
-                            result = value1 * value2;
-                        }
-                        else {
-                            result = onlyValue;
-                        }
+                        result = value1 * value2;
                         break;
-
                     case '/':
-                        if (czyDzialanie) {
-                            console.log('liczba z liczba: dzielenie');
-                            result = skrocUlamek(value1 + '/' + value2);
-                        }
-                        else {
-                            result = onlyValue;
-                        }
+                        result = skrocUlamek(value1 + '/' + value2);
                         break;
                 }
+
             }
+
         }
 
+        console.warn('wynik: ', result.toString());
         return result.toString();
     };
 
@@ -761,120 +689,15 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
         return arr;
     }
 
-    function jakieToWyrazenie(value) {
-        value = value.replace(/\s/g, ''); // remove whitespaces
-
-        console.log('value', value, " (jakieToWyrazenie)");
-
-        // value has brackets
-        if (value.includes('(') && value.includes(')')) {
-            if (value.replace(/\(([^()]*)\)/g, "") == '') {
-                value = value.substring(1, value.length - 1);
-            } else {
-                value = value.replace(/\(([^()]*)\)/g, "$");
-            }
-            return jakieToWyrazenie(value);
-        }
-
-        //value has negative numbers
-        else if (value.startsWith('-') || value.includes('+-') || value.includes('--') || value.includes('/-') || value.includes('*-')) {
-            console.log("ujemne wartosci");
-
-            if(value.replace(/^-|\+-|--|\*-|\/-/g, "") !== '') {
-                value = value.replace(/^-/g, "");
-                value = value.replace(/(-(-))/g, '-');
-                value = value.replace(/(\+(-))/g, '+');
-                value = value.replace(/(\/(-))/g, '/');
-                value = value.replace(/(\*(-))/g, '*');
-                return jakieToWyrazenie(value);
-            }
-        }
-
-        // value has no brackets and no negatives values
-        else {
-            if (value.includes('+') || value.includes('-')) {
-                //delete minus from beginning of string
-                if (value.startsWith('-')) {
-                    value = value.substr(1, value.length);
-                }
-                if (value.includes('+') && !value.includes('-')) {
-                    return '+';
-                }
-                if (!value.includes('+') && value.includes('-')) {
-                    return '-';
-                }
-
-                var add = value.lastIndexOf('+');
-                var min = value.lastIndexOf('-');
-                //get first occurrence
-                if (add > min) {
-                    return '+';
-                } else {
-                    return '-';
-                }
-            }
-
-            else if (value.includes('*') || value.includes('/')) {
-                if (value.includes('*') && !value.includes('/')) {
-                    return '*';
-                }
-                if (!value.includes('*') && value.includes('/')) {
-                    return '/';
-                }
-                // todo nie robić anagramu tylko złapać ostatnie wystąpienie znaku tak jak poniżej, powinno być już ok, do zbadania i trzeba przetestować potęgi, pierwiastki i pi
-                var mal = value.lastIndexOf('*');
-                var dev = value.lastIndexOf('/');
-                //get first occurrence
-                if (mal > dev) {
-                    return '*';
-                } else {
-                    return '/';
-                }
-            }
-
-            else if (value.includes('\u221a')) {
-                return '\u221a';
-            }
-
-            else if (value.includes('^')) {
-                return '^';
-            }
-
-            else if (value.includes('^')) {
-                return '^';
-            }
-
-            else if (value.includes('π')) {
-                return 'π';
-            }
-
-            else {
-                return value;
-            }
-        }
-
-    }
-
-    function czyJestDzialaniem(value) {
-        if (value.startsWith('-')){
-            value = value.substring(1, value.length);
-        }
-
-        // tylko liczba
-        if (!(value.includes('+')) && !(value.includes('-')) && !(value.includes('/')) && !(value.includes('*')) && !(value.includes('√')) && !(value.includes('^')) && !(value.includes('π'))){
-            console.log("czyJestDzialaniem: tylko liczba");
-            return false;
-        }
-        else if(jakieToWyrazenie(value).includes('*') ||
-                jakieToWyrazenie(value).includes('+') ||
-                jakieToWyrazenie(value).includes('-') ||
-                ((value.match(/\//g) || []).length > 1)){
+    function czyJestWyrazeniem(val) {
+        if (helpers.jakieToWyrazenie(val).includes('*') ||
+            helpers.jakieToWyrazenie(val).includes('+') ||
+            (helpers.jakieToWyrazenie(val).includes('-') && !val.startsWith('-'))) {
             return true;
-            
         }
-        else {
-            return false;
-        }
+
+        // jesli zawiera +, *, odejmowanie (ale nie jako pierwszy znak), dwa dzielenia
+        return false;
     }
 
     /** get operator type */
@@ -926,7 +749,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
             return 0;
         }
         if (ul.before.includes('\u221a') || ul.before.includes('^') || ul.before.includes('/') || ul.before.includes('π') || ul.after.includes('\u221a') || ul.after.includes('^') || ul.after.includes('/') || ul.after.includes('π')) {
-            return count(ul.befor, ul.after, '/');
+            return count(ul.before, ul.after, '/');
         } else {
             var nwd = helpers.NWD_2(parseFloat(ul.before), parseFloat(ul.after));
             var x = parseFloat(ul.before) / nwd;
@@ -1056,8 +879,7 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
     }
 
     return {
-        jakie: jakieToWyrazenie,
-        count: count,
-        czy: czyJestDzialaniem
+        jakie: helpers.jakieToWyrazenie,
+        count: count
     }
 }]);
