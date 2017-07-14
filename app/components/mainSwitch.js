@@ -878,8 +878,15 @@ app.factory('mainSwitch', ['ulamek', 'potega', 'pierwiastek', 'pi', 'helpers', f
         }
     }
 
+    function calculate (input) {
+        var op = helpers.jakieToWyrazenie(input);
+        var split = helpers.devide(input, op);
+        return count(split[0], split[1], op);
+    }
+
     return {
         jakie: helpers.jakieToWyrazenie,
-        count: count
+        count: count,
+        calculate: calculate
     }
 }]);

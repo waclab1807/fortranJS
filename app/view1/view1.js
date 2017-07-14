@@ -25,7 +25,8 @@ app.controller('View1Ctrl', ['$scope', 'mainSwitch', function($scope, mainSwitch
   };
 
   $scope.count = function() {
-    $scope.result = mainSwitch.count($scope.val1, $scope.val2, $scope.operator);
+    $scope.result = mainSwitch.calculate($scope.val1);
+    //$scope.result = mainSwitch.count($scope.val1, $scope.val2, $scope.operator);
   };
 
   $scope.test = function () {
